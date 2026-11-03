@@ -1,12 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import Image from "next/image";
+import HeroSlider from "@/components/shared/HeroSlider";
 
 export default function Home() {
   return (
-   <div>
-        <h1>next js app</h1>      
-        
-   </div>
+    <main>
+      <HeroSlider />
+    </main>
   );
 }

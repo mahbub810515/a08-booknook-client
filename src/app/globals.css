@@ -128,3 +128,51 @@
     @apply font-sans;
   }
 }
+
+/* Hero slider (Swiper) */
+.hero-swiper {
+  --swiper-navigation-color: #ffffff;
+  --swiper-navigation-sides-offset: 1rem;
+  --swiper-pagination-color: #10b981;
+  --swiper-pagination-bullet-inactive-color: rgb(255 255 255 / 0.55);
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}
+
+.hero-swiper .swiper-button-prev,
+.hero-swiper .swiper-button-next {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid rgb(255 255 255 / 0.25);
+  border-radius: 9999px;
+  background-color: rgb(0 0 0 / 0.3);
+  backdrop-filter: blur(6px);
+  transition: background-color 0.2s ease;
+}
+
+.hero-swiper .swiper-button-prev:hover,
+.hero-swiper .swiper-button-next:hover {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+.hero-swiper .swiper-button-prev svg,
+.hero-swiper .swiper-button-next svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.hero-swiper .swiper-pagination {
+  bottom: 1.75rem;
+}
+
+.hero-swiper .swiper-pagination-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  transition:
+    width 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  width: 1.75rem;
+  border-radius: 9999px;
+}

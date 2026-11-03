@@ -16,6 +16,11 @@ import { Button } from "@/components/ui/button";
 
 const navLinks = [
   {
+    name: "Home",
+    href: "/",
+    icon: Library,
+  },
+  {
     name: "All Books",
     href: "/books",
     icon: Library,
@@ -26,7 +31,12 @@ const navLinks = [
     icon: Plus,
   },
   {
-    name: "Borrow Book",
+    name: "My Books",
+    href: "/my-books",
+    icon: BookMarked,
+  },
+  {
+    name: "My Borrow",
     href: "/borrow",
     icon: BookMarked,
   },
