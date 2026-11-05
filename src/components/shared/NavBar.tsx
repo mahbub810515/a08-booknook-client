@@ -26,8 +26,8 @@ const navLinks = [
     icon: Library,
   },
   {
-    name: "Add Books",
-    href: "/books/add",
+    name: "Add Book",
+    href: "/books/add-book",
     icon: Plus,
   },
   {

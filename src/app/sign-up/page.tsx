@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
+
 type FieldName = "name" | "email" | "photoUrl" | "password";
 
 type FormValues = Record<FieldName, string>;
@@ -85,7 +86,7 @@ export default function SignUpPage() {
     }
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const nextErrors = validate(values);
     setErrors(nextErrors);
@@ -94,8 +95,30 @@ export default function SignUpPage() {
       setSubmitted(false);
       return;
     }
+    try{
+      const userData ={
+        ...values
+      }
+      console.log(userData)
+      //send data to the server
+      const response = await fetch("http://localhost:5000/api/sign-up",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"          
+        },
+        body:JSON.stringify(userData)
+      })
+      if(!response.ok){
+          throw new Error("failed to save user data")
+      }
+      const result = await response.json();
+      console.log("submited successfully",result);
+      setSubmitted(true)
 
-    setSubmitted(true);
+    }catch (error){
+      console.log("Error",error);
+      setSubmitted(false);
+    }
   }
 
   const fields: Array<{
