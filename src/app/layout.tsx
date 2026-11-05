@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/NavBar";
 import Footer from "@/components/shared/Footer";
+import { Toaster } from "@/components/ui/toast";
 
 
 
@@ -30,7 +31,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <Navbar />
         {children}
-        <Footer />        
+        <Footer />
+        <Toaster />        
       </body>
     </html>
   );
