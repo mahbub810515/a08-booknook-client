@@ -133,7 +133,7 @@ export default function AddBooksPage() {
         stock: Number(values.stock),
       };
       console.log(bookData)
-      const response = await fetch("http://localhost:5000/api/add-book", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/api/add-book`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

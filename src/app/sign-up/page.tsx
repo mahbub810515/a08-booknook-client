@@ -101,7 +101,7 @@ export default function SignUpPage() {
       }
       console.log(userData)
       //send data to the server
-      const response = await fetch("http://localhost:5000/api/sign-up",{
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/api/sign-up`,{
         method:"POST",
         headers:{
           "Content-Type":"application/json"          
