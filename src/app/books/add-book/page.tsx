@@ -126,7 +126,34 @@ export default function AddBooksPage() {
       return;
     }
 
-  
+    try {
+      const bookData = {
+        ...values,
+        pages: Number(values.pages),
+        stock: Number(values.stock),
+      };
+      console.log(bookData)
+      const response = await fetch("http://localhost:5000/api/add-book", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to save book data");
+      }
+
+      const result = await response.json();
+      console.log("Book added successfully", result);
+      setSubmitted(true);
+      setValues(initialValues);
+    } catch (error) {
+      console.log("Error", error);
+      setSubmitted(false);
+      setSubmitError("Could not add the book. Please try again.");
+    }
   }
 
   function fieldError(name: FieldName) {
